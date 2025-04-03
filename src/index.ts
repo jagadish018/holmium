@@ -5,6 +5,13 @@ const app = new Hono()
 
 app.get('/ping', (c) => {
   return c.json({message:"Hello world"})
+})
+  
+
+app.get("/platform", (c) => {
+  return c.json({
+    platform: process.platform
+  })
   })
 serve({
   fetch: app.fetch,
